@@ -2,8 +2,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Client gui = new Client("Guilherme", "Araguari", "(34)988023241", 30 );
-        Client jana = new Client("Janaina", "Araçatuba", "(34)992354123", 27 );
+
+        Bank bandoDoBrasil = new Bank("Banco do Brasil");
+        Bank bandoBradesco = new Bank("Banco Bradesco");
+        bandoDoBrasil.bankInfo();
+        bandoBradesco.bankInfo();
+        Client gui = new Client("Guilherme", "Araguari", "(34)988023241", "guidinizeng@gmail.com", 30, 1);
+        Client jana = new Client("Janaina", "Araçatuba", "(34)992354123", "janainafmedeiros@bol.com", 27, 2 );
         Account cc = new CurrentAccount(gui);
         Account cp = new SavingsAccount(jana);
         cc.withdraw(500);

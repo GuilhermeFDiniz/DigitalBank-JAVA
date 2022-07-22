@@ -58,14 +58,14 @@ public abstract class Account implements AccountInterface{
             System.out.println("You cannot transfer this amount.");
         } else {
             balance -= value;
-            accountRecipient.transferRecipient(value);
-            statementList.add("Transfered to : "+ value);
+            accountRecipient.transferRecipient(value, this.clientAccount);
+            statementList.add("Transfered to " + accountRecipient.clientAccount.getName() +": "+ value);
         }
     }
 
-    public void transferRecipient(double value){
+    public void transferRecipient(double value, Client clientAccount){
         balance += value;
-        statementList.add("Transference from :"+ value);
+        statementList.add("Transference from "+ clientAccount.getName() +":" + value);
 
     }
 

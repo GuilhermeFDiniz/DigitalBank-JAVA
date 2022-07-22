@@ -1,4 +1,5 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
 
@@ -7,13 +8,15 @@ public class Client {
     private String phoneNumber;
     private String email;
     private int clientAge;
-
+    private int bankID;
+    List <String> clientList = new ArrayList<String>();
 
     public Client(String name, String adress, String phoneNumber, int clientAge) {
         this.name = name;
         this.adress = adress;
         this.phoneNumber = phoneNumber;
         this.clientAge = clientAge;
+        this.clientList.add(this.name);
     }
 
     public Client(String name, String adress, String phoneNumber, String email, int clientAge) {
@@ -22,6 +25,17 @@ public class Client {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.clientAge = clientAge;
+        this.clientList.add(this.name);
+    }
+
+    public Client(String name, String adress, String phoneNumber, String email, int clientAge, int ID) {
+        this.name = name;
+        this.adress = adress;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.clientAge = clientAge;
+        this.bankID = ID;
+        this.clientList.add(this.name);
     }
 
     public void setName(String name) {
@@ -63,4 +77,7 @@ public class Client {
     public int getClientAge() {
         return clientAge;
     }
+
+
+
 }

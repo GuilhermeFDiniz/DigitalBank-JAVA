@@ -1,8 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bank {
 
+    private static int BANKID=1;
     private String name;
     private int bankId;
-    private Client clients;
+
+    public Bank(String name) {
+        this.name = name;
+        this.bankId = BANKID++;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -21,7 +29,10 @@ public class Bank {
         return bankId;
     }
 
-    public Client getClients() {
-        return clients;
+
+    public void bankInfo(){
+        System.out.println("Bank name: " + this.getName());
+        System.out.println("Bank name: " + this.getBankId());
     }
+
 }
