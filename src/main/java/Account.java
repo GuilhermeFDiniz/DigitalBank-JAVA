@@ -13,10 +13,13 @@ public abstract class Account implements AccountInterface{
     protected Client clientAccount;
 
 
+    public Account(Client clientAccount) {
+        this.clientAccount = clientAccount;
+        this.bankOffice = DEFAULT_ROUTING_NUMBER;
+        this.accountNumber = ACCOUNT_ID;
+    }
 
-    public Account() {
-        this.accountNumber = ACCOUNT_ID++;
-        this.bankOffice = Account.DEFAULT_ROUTING_NUMBER;
+    protected Account() {
     }
 
     public int getBankOffice() {
@@ -68,6 +71,10 @@ public abstract class Account implements AccountInterface{
 
     @Override
     public void bankStatement() {
+        System.out.println(String.format("Holder Name: " + this.getClientAccount().getName()));
+        System.out.println(String.format("Age: %d", this.getClientAccount().getClientAge()));
+        System.out.println(String.format("Adress: " + this.getClientAccount().getAdress()));
+        System.out.println(String.format("Phone Number: " + this.getClientAccount().getPhoneNumber()));
         System.out.println(String.format("Bank Office: %d", this.getBankOffice()));
         System.out.println(String.format("Account Number: %d", this.getAccountNumber()));
         System.out.println(String.format("Balance: %.2f", this.getBalance()));
