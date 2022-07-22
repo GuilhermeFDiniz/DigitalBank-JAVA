@@ -6,6 +6,7 @@ public interface AccountInterface {
 
     void transfer(double value, Account accountRecipient);
 
-    void bankstatement();
+    void bankStatement();
+
 
 }
