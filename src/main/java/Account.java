@@ -10,13 +10,13 @@ public abstract class Account implements AccountInterface{
     protected int accountNumber;
     protected double balance;
     protected List<String> statementList = new ArrayList<String>();
+    protected Client clientAccount;
 
 
 
     public Account() {
         this.accountNumber = ACCOUNT_ID++;
         this.bankOffice = Account.DEFAULT_ROUTING_NUMBER;
-
     }
 
     public int getBankOffice() {
@@ -31,8 +31,7 @@ public abstract class Account implements AccountInterface{
         return balance;
     }
 
-
-
+    public Client getClientAccount() { return clientAccount; }
 
     @Override
     public void withdraw(double value) {

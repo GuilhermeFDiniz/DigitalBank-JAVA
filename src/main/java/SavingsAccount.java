@@ -1,6 +1,5 @@
 public class SavingsAccount extends Account{
 
-
     @Override
     public void bankStatement(){
         System.out.println(String.format
